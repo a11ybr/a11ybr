@@ -1,4 +1,4 @@
-import { ExternalLink, Star } from "lucide-react";
+import { ExternalLink, BookOpen, Tv, Wrench, Globe, GraduationCap, type LucideIcon } from "lucide-react";
 import { Tag } from "@/components/ui/Tag";
 
 interface ResourceCardProps {
@@ -11,12 +11,12 @@ interface ResourceCardProps {
   free?: boolean;
 }
 
-const categoryLabels: Record<ResourceCardProps["category"], string> = {
-  livro: "📖 Livro",
-  canal: "📺 Canal",
-  ferramenta: "🛠️ Ferramenta",
-  site: "🌐 Site",
-  curso: "🎓 Curso",
+const categoryConfig: Record<ResourceCardProps["category"], { label: string; icon: LucideIcon }> = {
+  livro: { label: "Livro", icon: BookOpen },
+  canal: { label: "Canal", icon: Tv },
+  ferramenta: { label: "Ferramenta", icon: Wrench },
+  site: { label: "Site", icon: Globe },
+  curso: { label: "Curso", icon: GraduationCap },
 };
 
 export function ResourceCard({
@@ -32,8 +32,9 @@ export function ResourceCard({
     <article className="card-base rounded-lg p-5 flex flex-col gap-3">
       {/* Category + free badge */}
       <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold text-muted-foreground">
-          {categoryLabels[category]}
+        <span className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
+          {(() => { const Ico = categoryConfig[category].icon; return <Ico size={13} aria-hidden />; })()}
+          {categoryConfig[category].label}
         </span>
         {free && (
           <Tag variant="success">Gratuito</Tag>

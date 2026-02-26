@@ -1,4 +1,4 @@
-import { ExternalLink, Linkedin, Globe } from "lucide-react";
+import { ExternalLink, Linkedin, Globe, MapPin } from "lucide-react";
 import { Tag } from "@/components/ui/Tag";
 
 interface ProfileCardProps {
@@ -46,7 +46,7 @@ export function ProfileCard({
             {name}
           </h3>
           <p className="text-sm text-muted-foreground">{role}</p>
-          {location && <p className="text-xs text-muted-foreground mt-0.5">📍 {location}</p>}
+          {location && <p className="text-xs text-muted-foreground mt-0.5 flex items-center gap-1"><MapPin size={11} className="text-primary flex-shrink-0" aria-hidden /> {location}</p>}
         </div>
       </div>
 

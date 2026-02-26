@@ -1,5 +1,5 @@
 import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, PenLine, Search, CheckCircle, RefreshCw, type LucideIcon } from "lucide-react";
 
 const team = [
   { name: "Fernanda Oliveira", role: "Fundadora & Editora-chefe", initials: "FO" },
@@ -47,14 +47,14 @@ export default function Sobre() {
               <span className="section-label mb-3 block">Funcionamento</span>
               <h2 id="como-heading" className="mb-4">Como funciona</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {[
-                  { icon: "📝", title: "Submissão comunitária", desc: "Qualquer pessoa pode submeter conteúdo para revisão editorial." },
-                  { icon: "🔍", title: "Revisão editorial", desc: "Nossa equipe analisa cada submissão por qualidade e relevância." },
-                  { icon: "✅", title: "Publicação aprovada", desc: "Conteúdos aprovados são publicados e atribuídos ao autor." },
-                  { icon: "🔄", title: "Atualização contínua", desc: "A plataforma é atualizada semanalmente com novos conteúdos." },
-                ].map(({ icon, title, desc }) => (
+                {([
+                  { Icon: PenLine, title: "Submissão comunitária", desc: "Qualquer pessoa pode submeter conteúdo para revisão editorial." },
+                  { Icon: Search, title: "Revisão editorial", desc: "Nossa equipe analisa cada submissão por qualidade e relevância." },
+                  { Icon: CheckCircle, title: "Publicação aprovada", desc: "Conteúdos aprovados são publicados e atribuídos ao autor." },
+                  { Icon: RefreshCw, title: "Atualização contínua", desc: "A plataforma é atualizada semanalmente com novos conteúdos." },
+                ] as { Icon: LucideIcon; title: string; desc: string }[]).map(({ Icon, title, desc }) => (
                   <div key={title} className="p-5 rounded-xl border border-border bg-card flex gap-4">
-                    <span className="text-2xl flex-shrink-0" aria-hidden>{icon}</span>
+                    <Icon size={22} className="text-primary flex-shrink-0 mt-0.5" aria-hidden />
                     <div>
                       <h3 className="text-sm font-bold text-foreground mb-1">{title}</h3>
                       <p className="text-sm text-muted-foreground">{desc}</p>

@@ -1,3 +1,4 @@
+import { Newspaper, Wrench, CalendarDays, Briefcase } from "lucide-react";
 import { NewsletterModule } from "@/components/NewsletterModule";
 import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 
@@ -23,13 +24,13 @@ export default function Newsletter() {
             <h2 className="text-base font-bold text-foreground mb-4">O que você receberá</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: "📰", label: "Artigos e tutoriais", desc: "Os melhores conteúdos publicados na semana" },
-                { icon: "🛠️", label: "Ferramentas e recursos", desc: "Novidades em ferramentas de acessibilidade" },
-                { icon: "📅", label: "Eventos da semana", desc: "Workshops, meetups e webinars que valem a pena" },
-                { icon: "💼", label: "Vagas e oportunidades", desc: "Oportunidades focadas em acessibilidade" },
-              ].map(({ icon, label, desc }) => (
+                { Icon: Newspaper, label: "Artigos e tutoriais", desc: "Os melhores conteúdos publicados na semana" },
+                { Icon: Wrench, label: "Ferramentas e recursos", desc: "Novidades em ferramentas de acessibilidade" },
+                { Icon: CalendarDays, label: "Eventos da semana", desc: "Workshops, meetups e webinars que valem a pena" },
+                { Icon: Briefcase, label: "Vagas e oportunidades", desc: "Oportunidades focadas em acessibilidade" },
+              ].map(({ Icon, label, desc }) => (
                 <div key={label} className="flex gap-3">
-                  <span className="text-2xl" aria-hidden>{icon}</span>
+                  <Icon size={22} className="text-primary flex-shrink-0 mt-0.5" aria-hidden />
                   <div>
                     <p className="text-sm font-semibold text-foreground">{label}</p>
                     <p className="text-xs text-muted-foreground">{desc}</p>

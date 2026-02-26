@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BookOpen, Tv, Wrench, Globe, GraduationCap, type LucideIcon } from "lucide-react";
 import { ResourceCard } from "@/components/cards/ResourceCard";
 import { SearchInput } from "@/components/ui/SearchInput";
 import { FilterChip } from "@/components/ui/FilterChip";
@@ -115,12 +116,12 @@ export default function Recursos() {
   // Group by category for display
   const categories = [...new Set(filtered.map((r) => r.category))];
 
-  const categoryIcons: Record<string, string> = {
-    livro: "📖 Livros",
-    canal: "📺 Canais",
-    ferramenta: "🛠️ Ferramentas",
-    site: "🌐 Sites",
-    curso: "🎓 Cursos",
+  const categoryMeta: Record<string, { label: string; icon: LucideIcon }> = {
+    livro: { label: "Livros", icon: BookOpen },
+    canal: { label: "Canais", icon: Tv },
+    ferramenta: { label: "Ferramentas", icon: Wrench },
+    site: { label: "Sites", icon: Globe },
+    curso: { label: "Cursos", icon: GraduationCap },
   };
 
   return (
@@ -168,8 +169,8 @@ export default function Recursos() {
                     id={`cat-${cat}`}
                     className="text-base font-bold text-foreground mb-4 pb-3 border-b border-border flex items-center gap-2"
                   >
-                    <span style={{ color: "hsl(var(--primary))" }}>—</span>
-                    {categoryIcons[cat]}
+                    {(() => { const Ico = categoryMeta[cat].icon; return <Ico size={18} className="text-primary" aria-hidden />; })()}
+                    {categoryMeta[cat].label}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {items.map((item) => (
