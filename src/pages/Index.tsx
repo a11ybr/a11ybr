@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, FileText, CalendarDays, Layers } from "lucide-react";
+import { ArrowRight, Users, FileText, CalendarDays, Layers, ClipboardList, Accessibility, Ear, PenTool, Code, Smartphone, type LucideIcon } from "lucide-react";
 import { ContentCard } from "@/components/cards/ContentCard";
 import { ProfileCard } from "@/components/cards/ProfileCard";
 import { EventCard } from "@/components/cards/EventCard";
 import { NewsletterModule } from "@/components/NewsletterModule";
 import { Tag } from "@/components/ui/Tag";
 
-const categories = [
-{ label: "WCAG & Diretrizes", count: 48, icon: "📋" },
-{ label: "Tecnologia Assistiva", count: 32, icon: "🦾" },
-{ label: "Libras & Surdez", count: 27, icon: "👂" },
-{ label: "Design Inclusivo", count: 41, icon: "✏️" },
-{ label: "Desenvolvimento Web", count: 55, icon: "💻" },
-{ label: "Mobile & Apps", count: 19, icon: "📱" }];
+const categories: { label: string; count: number; icon: LucideIcon }[] = [
+{ label: "WCAG & Diretrizes", count: 48, icon: ClipboardList },
+{ label: "Tecnologia Assistiva", count: 32, icon: Accessibility },
+{ label: "Libras & Surdez", count: 27, icon: Ear },
+{ label: "Design Inclusivo", count: 41, icon: PenTool },
+{ label: "Desenvolvimento Web", count: 55, icon: Code },
+{ label: "Mobile & Apps", count: 19, icon: Smartphone }];
 
 
 const recentContent = [
@@ -198,19 +198,22 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((cat) =>
+            {categories.map((cat) => {
+              const Icon = cat.icon;
+              return (
             <Link
               key={cat.label}
               to={`/conteudo?categoria=${encodeURIComponent(cat.label)}`}
               className="group flex flex-col items-center text-center gap-3 p-5 rounded-xl border border-border bg-card no-underline transition-all hover:border-primary/30 hover:shadow-card-hover hover:-translate-y-0.5">
 
-                <span className="text-3xl" aria-hidden>{cat.icon}</span>
+                <Icon size={28} className="text-primary" aria-hidden />
                 <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
                   {cat.label}
                 </span>
                 <span className="text-xs text-muted-foreground">{cat.count} itens</span>
               </Link>
-            )}
+              );
+            })}
           </div>
         </div>
       </section>
