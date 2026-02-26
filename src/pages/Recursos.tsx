@@ -159,27 +159,13 @@ export default function Recursos() {
         </div>
 
         {/* Grouped sections */}
-        {categories.length > 0 ? (
-          <div className="flex flex-col gap-12">
-            {categories.map((cat) => {
-              const items = filtered.filter((r) => r.category === cat);
-              return (
-                <section key={cat} aria-labelledby={`cat-${cat}`}>
-                  <h2
-                    id={`cat-${cat}`}
-                    className="text-base font-bold text-foreground mb-4 pb-3 border-b border-border flex items-center gap-2"
-                  >
-                    {(() => { const Ico = categoryMeta[cat].icon; return <Ico size={18} className="text-primary" aria-hidden />; })()}
-                    {categoryMeta[cat].label}
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {items.map((item) => (
-                      <ResourceCard key={item.title} {...item} />
-                    ))}
-                  </div>
-                </section>
-              );
-            })}
+        {filtered.length > 0 ? (
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5">
+            {filtered.map((item) => (
+              <div key={item.title} className="break-inside-avoid">
+                <ResourceCard {...item} />
+              </div>
+            ))}
           </div>
         ) : (
           <div className="text-center py-20 text-muted-foreground">
