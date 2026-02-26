@@ -14,6 +14,7 @@ import Newsletter from "./pages/Newsletter";
 import Sobre from "./pages/Sobre";
 import SubmeterConteudo from "./pages/SubmeterConteudo";
 import Apoiar from "./pages/Apoiar";
+import GuiaEstilo from "./pages/GuiaEstilo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/submeter" element={<SubmeterConteudo />} />
               <Route path="/apoiar" element={<Apoiar />} />
+              <Route path="/guia-de-estilo" element={<GuiaEstilo />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
