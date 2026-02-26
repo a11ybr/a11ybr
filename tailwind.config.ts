@@ -15,7 +15,7 @@ export default {
   	extend: {
   		fontFamily: {
   			sans: [
-  				'Source Sans Pro',
+  				'Nunito',
   				'ui-sans-serif',
   				'system-ui',
   				'sans-serif',
@@ -106,31 +106,31 @@ export default {
   					lineHeight: '1.4'
   				}
   			],
-  			'xs': [
+  			xs: [
   				'0.75rem',
   				{
   					lineHeight: '1.4'
   				}
   			],
-  			'sm': [
+  			sm: [
   				'0.875rem',
   				{
   					lineHeight: '1.5'
   				}
   			],
-  			'base': [
+  			base: [
   				'1rem',
   				{
   					lineHeight: '1.6'
   				}
   			],
-  			'lg': [
+  			lg: [
   				'1.125rem',
   				{
   					lineHeight: '1.5'
   				}
   			],
-  			'xl': [
+  			xl: [
   				'1.25rem',
   				{
   					lineHeight: '1.4'
