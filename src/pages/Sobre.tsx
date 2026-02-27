@@ -2,10 +2,10 @@ import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 import { Github, ExternalLink } from "lucide-react";
 
 const team = [
-{ name: "Fernanda Oliveira", role: "Fundadora & Editora-chefe", initials: "FO" },
-{ name: "Rafael Mendes", role: "Desenvolvedor & Arquiteto", initials: "RM" },
-{ name: "Ana Lima", role: "Curadora de Conteúdo", initials: "AL" },
-{ name: "Lucas Carvalho", role: "Open Source & Comunidade", initials: "LC" }];
+  { name: "Fernanda Oliveira", role: "Fundadora & Editora-chefe", initials: "FO" },
+  { name: "Rafael Mendes", role: "Desenvolvedor & Arquiteto", initials: "RM" },
+  { name: "Ana Lima", role: "Curadora de Conteúdo", initials: "AL" },
+  { name: "Lucas Carvalho", role: "Open Source & Comunidade", initials: "LC" }];
 
 
 export default function Sobre() {
@@ -48,19 +48,19 @@ export default function Sobre() {
               <h2 id="como-heading" className="mb-4">Como funciona</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {[
-                { icon: "📝", title: "Submissão comunitária", desc: "Qualquer pessoa pode submeter conteúdo para revisão editorial." },
-                { icon: "🔍", title: "Revisão editorial", desc: "Nossa equipe analisa cada submissão por qualidade e relevância." },
-                { icon: "✅", title: "Publicação aprovada", desc: "Conteúdos aprovados são publicados e atribuídos ao autor." },
-                { icon: "🔄", title: "Atualização contínua", desc: "A plataforma é atualizada semanalmente com novos conteúdos." }].
-                map(({ icon, title, desc }) =>
-                <div key={title} className="p-5 rounded-xl border border-border bg-card flex gap-4">
-                    <span className="text-2xl flex-shrink-0" aria-hidden>{icon}</span>
-                    <div>
-                      <h3 className="text-sm font-bold text-foreground mb-1">{title}</h3>
-                      <p className="text-sm text-muted-foreground">{desc}</p>
+                  { icon: "📝", title: "Submissão comunitária", desc: "Qualquer pessoa pode submeter conteúdo para revisão editorial." },
+                  { icon: "🔍", title: "Revisão editorial", desc: "Nossa equipe analisa cada submissão por qualidade e relevância." },
+                  { icon: "✅", title: "Publicação aprovada", desc: "Conteúdos aprovados são publicados e atribuídos ao autor." },
+                  { icon: "🔄", title: "Atualização contínua", desc: "A plataforma é atualizada semanalmente com novos conteúdos." }].
+                  map(({ icon, title, desc }) =>
+                    <div key={title} className="p-5 rounded-xl border border-border bg-card flex gap-4">
+                      <span className="text-2xl flex-shrink-0" aria-hidden>{icon}</span>
+                      <div>
+                        <h3 className="text-sm font-bold text-foreground mb-1">{title}</h3>
+                        <p className="text-sm text-muted-foreground">{desc}</p>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
               </div>
             </section>
 
@@ -70,14 +70,14 @@ export default function Sobre() {
               <h2 id="equipe-heading" className="mb-6">Quem mantém o a11yBR</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {team.map((member) =>
-                <div
-                  key={member.name}
-                  className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card">
+                  <div
+                    key={member.name}
+                    className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card">
 
                     <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm text-primary-foreground flex-shrink-0"
-                    style={{ background: "hsl(var(--primary))" }}
-                    aria-hidden>
+                      className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm text-primary-foreground flex-shrink-0"
+                      style={{ background: "hsl(var(--primary))" }}
+                      aria-hidden>
 
                       {member.initials}
                     </div>
@@ -98,17 +98,17 @@ export default function Sobre() {
                 <p>A comunidade a11yBR é um espaço respeitoso e inclusivo para todos. Esperamos que todos os participantes:</p>
                 <ul className="flex flex-col gap-2 ml-4">
                   {[
-                  "Tratem todos com respeito e profissionalismo",
-                  "Utilizem linguagem inclusiva e não discriminatória",
-                  "Sejam receptivos a perspectivas diferentes das suas",
-                  "Reconheçam o trabalho de outras pessoas",
-                  "Reportem comportamentos inadequados para a equipe"].
-                  map((item) =>
-                  <li key={item} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5" aria-hidden />
-                      {item}
-                    </li>
-                  )}
+                    "Tratem todos com respeito e profissionalismo",
+                    "Utilizem linguagem inclusiva e não discriminatória",
+                    "Sejam receptivos a perspectivas diferentes das suas",
+                    "Reconheçam o trabalho de outras pessoas",
+                    "Reportem comportamentos inadequados para a equipe"].
+                    map((item) =>
+                      <li key={item} className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5" aria-hidden />
+                        {item}
+                      </li>
+                    )}
                 </ul>
               </div>
             </section>
@@ -138,29 +138,30 @@ export default function Sobre() {
                 <h2 className="text-sm font-bold text-foreground mb-3">Links rápidos</h2>
                 <ul className="flex flex-col gap-2 list-none p-0 m-0">
                   {[
-                  { label: "Código de conduta", href: "#conduta" },
-                  { label: "Política de privacidade", href: "#privacidade" },
-                  { label: "Declaração de acessibilidade", href: "#acessibilidade" },
-                  { label: "Submeter conteúdo", href: "/submeter" },
-                  { label: "Apoiar o projeto", href: "/apoiar" }].
-                  map((l) =>
-                  <li key={l.href}>
-                      <a
-                      href={l.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline">
+                    { label: "Código de conduta", href: "#conduta" },
+                    { label: "Política de privacidade", href: "#privacidade" },
+                    { label: "Declaração de acessibilidade", href: "#acessibilidade" },
+                    { label: "Submeter conteúdo", href: "/submeter" },
+                    { label: "Apoiar o projeto", href: "/apoiar" }].
+                    map((l) =>
+                      <li key={l.href}>
+                        <a
+                          href={l.href}
+                          className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline">
 
-                        {l.label}
-                      </a>
-                    </li>
-                  )}
+                          {l.label}
+                        </a>
+                      </li>
+                    )}
                 </ul>
               </div>
 
               <div
-                className="p-5 rounded-xl border bg-secondary-foreground text-slate-50"
-                style={{ borderColor: "hsl(var(--primary) / 0.3)", background: "hsl(var(--primary-light))" }}>
 
-                <Github size={20} className="mb-3 text-primary" aria-hidden />
+                className="rounded-xl p-8 flex flex-col gap-5"
+                style={{ background: "hsl(var(--primary))" }}>
+
+                <Github size={20} className="mb-3" color="#fff" aria-hidden />
                 <h2 className="text-sm font-bold mb-1 text-primary-foreground">Open Source</h2>
                 <p className="text-xs mb-3 text-primary-light">
                   O código do a11yBR é aberto. Contribuições são bem-vindas!

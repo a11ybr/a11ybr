@@ -12,10 +12,12 @@ import Comunidade from "./pages/Comunidade";
 import Eventos from "./pages/Eventos";
 import Newsletter from "./pages/Newsletter";
 import Sobre from "./pages/Sobre";
-import SubmeterConteudo from "./pages/SubmeterConteudo";
 import Apoiar from "./pages/Apoiar";
+import GuiaDeEstilo from "./pages/GuiaEstilo";
 import NotFound from "./pages/NotFound";
-
+import Submeter from "@/pages/Submeter";
+import SubmeterConteudo from "./pages/SubmeterConteudo";
+import SubmeterPerfil from "./pages/SubmeterPerfil";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -35,9 +37,13 @@ const App = () => (
               <Route path="/eventos" element={<Eventos />} />
               <Route path="/newsletter" element={<Newsletter />} />
               <Route path="/sobre" element={<Sobre />} />
-              <Route path="/submeter" element={<SubmeterConteudo />} />
               <Route path="/apoiar" element={<Apoiar />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/guia-de-estilo" element={<GuiaDeEstilo />} />
+              <Route path="/submeter" element={<Submeter />} />
+              <Route path="/submeter/conteudo" element={<SubmeterConteudo />} />
+              <Route path="/submeter/perfil" element={<SubmeterPerfil />} />
+
             </Routes>
           </div>
           <Footer />

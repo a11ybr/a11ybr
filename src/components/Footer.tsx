@@ -3,7 +3,7 @@ import { Github, Twitter, Linkedin, Heart } from "lucide-react";
 
 const footerLinks = {
   plataforma: [
-    { label: "Home", href: "/" },
+    { label: "Página inicial", href: "/" },
     { label: "Conteúdo", href: "/conteudo" },
     { label: "Recursos", href: "/recursos" },
     { label: "Comunidade", href: "/comunidade" },

@@ -78,9 +78,22 @@
     --focus-ring: 0 0 0 3px hsl(346 69% 39% / 0.25);
     --font-sans: Nunito, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
+
   .dark {
     --font-sans: Nunito, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
+}
+
+/* =========================
+   Components
+========================= */
+
+@layer components {
+
+  .input-base {
+    @apply w-full px-4 py-3 rounded-lg border border-border bg-card text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors;
+  }
+
 }
 
 @layer base {
@@ -104,7 +117,12 @@
   }
 
   /* Typography scale */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 700;
     line-height: 1.2;
@@ -112,10 +130,21 @@
     color: hsl(var(--foreground));
   }
 
-  h1 { font-size: clamp(2rem, 4vw, 3rem); }
-  h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
-  h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); }
-  h4 { font-size: 1.125rem; }
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  h3 {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
 
   p {
     line-height: 1.6;
@@ -154,12 +183,14 @@
     text-decoration: none;
     transition: top 0.1s;
   }
+
   .skip-link:focus {
     top: 1rem;
   }
 }
 
 @layer utilities {
+
   /* Container system */
   .container-site {
     width: 100%;
@@ -262,4 +293,6 @@
     height: 1px;
     background: hsl(var(--border));
   }
+
+
 }

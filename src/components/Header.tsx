@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { Button } from "./ui/button";
 
 const navItems = [
-  { label: "Home", href: "/" },
+  { label: "Página inicial", href: "/" },
   { label: "Conteúdo", href: "/conteudo" },
   { label: "Recursos", href: "/recursos" },
   { label: "Comunidade", href: "/comunidade" },
@@ -58,11 +59,10 @@ export function Header() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium no-underline transition-colors ${
-                    isActive(item.href)
+                  className={`px-3 py-2 rounded-md text-sm font-medium no-underline transition-colors ${isActive(item.href)
                       ? "text-primary bg-primary-light"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                  }`}
+                    }`}
                   aria-current={isActive(item.href) ? "page" : undefined}
                 >
                   {item.label}
@@ -80,18 +80,11 @@ export function Header() {
               </Link>
               <Link
                 to="/submeter"
-                className="inline-flex items-center px-4 py-2 rounded-md text-sm font-semibold text-primary-foreground no-underline transition-colors"
-                style={{
-                  background: "hsl(var(--primary))",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "hsl(var(--primary-hover))";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "hsl(var(--primary))";
-                }}
+
               >
-                Submeter conteúdo
+                <Button variant="default">
+                  Submeter conteúdo
+                </Button>
               </Link>
             </div>
 
@@ -120,11 +113,10 @@ export function Header() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`px-3 py-2.5 rounded-md text-sm font-medium no-underline transition-colors ${
-                    isActive(item.href)
+                  className={`px-3 py-2.5 rounded-md text-sm font-medium no-underline transition-colors ${isActive(item.href)
                       ? "text-primary bg-primary-light"
                       : "text-foreground hover:bg-secondary"
-                  }`}
+                    }`}
                   onClick={() => setMobileOpen(false)}
                   aria-current={isActive(item.href) ? "page" : undefined}
                 >
