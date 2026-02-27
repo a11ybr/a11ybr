@@ -36,7 +36,7 @@ export function EventCard({
     <article className="card-base rounded-lg overflow-hidden">
       {/* Date bar */}
       <div
-        className="items-center gap-3 px-5 py-3 border-b border-border flex flex-row bg-secondary"
+        className="items-center gap-3 px-5 py-3 border-b border-border flex flex-row bg-primary-foreground"
         style={{ background: "hsl(var(--primary-light))" }}>
 
         <Calendar size={15} className="text-primary flex-shrink-0" aria-hidden />
