@@ -9,7 +9,7 @@
 @layer base {
   :root {
     /* Brand */
-    --primary: 346 69% 39%;
+    --primary: 144 61.165% 20.1961%;
     --primary-foreground: 0 0% 100%;
     --primary-hover: 346 69% 32%;
     --primary-light: 346 69% 95%;
@@ -31,7 +31,7 @@
     --muted: 220 14% 93%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 346 69% 39%;
+    --accent: 38 92.126% 50.1961%;
     --accent-foreground: 0 0% 100%;
 
     /* Semantic */
@@ -293,6 +293,5 @@
     height: 1px;
     background: hsl(var(--border));
   }
-
 
 }
