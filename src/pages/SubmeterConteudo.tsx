@@ -20,7 +20,7 @@ import {
 
 import {
 
-  supabase
+  getSupabase
 } from "@/lib/supabase";
 
 type FormState = {
@@ -99,7 +99,7 @@ export default function SubmeterConteudo() {
     const {
       error
 
-    } = await supabase.from("contents").insert([payload]);
+    } = await getSupabase().from("contents").insert([payload]);
 
     setLoading(false);
 
