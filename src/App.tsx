@@ -13,6 +13,7 @@ import Eventos from "./pages/Eventos";
 import Newsletter from "./pages/Newsletter";
 import Sobre from "./pages/Sobre";
 import Apoiar from "./pages/Apoiar";
+import GuiaEstilo from "./pages/GuiaEstilo";
 import GuiaDeEstilo from "./pages/GuiaEstilo";
 import NotFound from "./pages/NotFound";
 import Submeter from "@/pages/Submeter";
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/newsletter" element={<Newsletter />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/apoiar" element={<Apoiar />} />
+              <Route path="/guia-de-estilo" element={<GuiaEstilo />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/guia-de-estilo" element={<GuiaDeEstilo />} />
               <Route path="/submeter" element={<Submeter />} />
