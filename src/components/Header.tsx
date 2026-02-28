@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 
 const navItems = [
   { label: "Página inicial", href: "/" },
-  { label: "Conteúdo", href: "/conteudo" },
-  { label: "Recursos", href: "/recursos" },
+  { label: "Categorias", href: "/categorias" },
   { label: "Comunidade", href: "/comunidade" },
-  { label: "Eventos", href: "/eventos" },
   { label: "Newsletter", href: "/newsletter" },
   { label: "Sobre", href: "/sobre" },
 ];
@@ -18,20 +16,26 @@ export function Header() {
   const location = useLocation();
 
   const isActive = (href: string) =>
-    href === "/" ? location.pathname === "/" : location.pathname.startsWith(href);
+    href === "/"
+      ? location.pathname === "/"
+      : location.pathname.startsWith(href);
 
   return (
     <>
       <a href="#main-content" className="skip-link">
         Pular para o conteúdo principal
       </a>
+
       <header
         className="sticky top-0 z-50 bg-card border-b border-border"
         style={{ boxShadow: "var(--shadow-sm)" }}
         role="banner"
       >
         <div className="container-site">
-          <div className="flex items-center justify-between" style={{ height: "var(--nav-height)" }}>
+          <div
+            className="flex items-center justify-between"
+            style={{ height: "var(--nav-height)" }}
+          >
             {/* Logo */}
             <Link
               to="/"
@@ -59,10 +63,11 @@ export function Header() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium no-underline transition-colors ${isActive(item.href)
+                  className={`px-3 py-2 rounded-md text-sm font-medium no-underline transition-colors ${
+                    isActive(item.href)
                       ? "text-primary bg-primary-light"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                    }`}
+                  }`}
                   aria-current={isActive(item.href) ? "page" : undefined}
                 >
                   {item.label}
@@ -78,13 +83,9 @@ export function Header() {
               >
                 Apoiar
               </Link>
-              <Link
-                to="/submeter"
 
-              >
-                <Button variant="default">
-                  Submeter conteúdo
-                </Button>
+              <Link to="/submeter">
+                <Button>Submeter iniciativa</Button>
               </Link>
             </div>
 
@@ -96,7 +97,7 @@ export function Header() {
               aria-controls="mobile-menu"
               onClick={() => setMobileOpen((v) => !v)}
             >
-              {mobileOpen ? <X size={20} aria-hidden /> : <Menu size={20} aria-hidden />}
+              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -113,16 +114,18 @@ export function Header() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`px-3 py-2.5 rounded-md text-sm font-medium no-underline transition-colors ${isActive(item.href)
+                  className={`px-3 py-2.5 rounded-md text-sm font-medium no-underline transition-colors ${
+                    isActive(item.href)
                       ? "text-primary bg-primary-light"
                       : "text-foreground hover:bg-secondary"
-                    }`}
+                  }`}
                   onClick={() => setMobileOpen(false)}
                   aria-current={isActive(item.href) ? "page" : undefined}
                 >
                   {item.label}
                 </Link>
               ))}
+
               <div className="border-t border-border mt-2 pt-3 flex flex-col gap-2">
                 <Link
                   to="/apoiar"
@@ -131,13 +134,14 @@ export function Header() {
                 >
                   Apoiar
                 </Link>
+
                 <Link
                   to="/submeter"
-                  className="px-3 py-2.5 rounded-md text-sm font-semibold text-primary-foreground no-underline text-center"
+                  className="px-3 py-2.5 rounded-md text-sm font-semibold text-primary-foreground text-center no-underline"
                   style={{ background: "hsl(var(--primary))" }}
                   onClick={() => setMobileOpen(false)}
                 >
-                  Submeter conteúdo
+                  Submeter iniciativa
                 </Link>
               </div>
             </div>
