@@ -6,18 +6,17 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Index from "./pages/Index";
-import Comunidade from "./pages/Comunidade";
 import Newsletter from "./pages/Newsletter";
 import Sobre from "./pages/Sobre";
 import Apoiar from "./pages/Apoiar";
 import GuiaEstilo from "./pages/GuiaEstilo";
-import GuiaDeEstilo from "./pages/GuiaEstilo";
 import NotFound from "./pages/NotFound";
 import Submeter from "@/pages/Submeter";
 import SubmeterConteudo from "./pages/SubmeterConteudo";
 import SubmeterPerfil from "./pages/SubmeterPerfil";
-import Categorias from "./pages/Categorias";
+import Conteudo from "./pages/Conteudo";
 import Categoria from "./pages/Categoria";
+import Comunidade from "./pages/Comunidade";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -32,17 +31,16 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/comunidade" element={<Comunidade />} />
+              <Route path="/conteudo" element={<Conteudo />} />
+              <Route path="/categoria/:slug" element={<Categoria />} />
               <Route path="/newsletter" element={<Newsletter />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/apoiar" element={<Apoiar />} />
               <Route path="/guia-de-estilo" element={<GuiaEstilo />} />
-              <Route path="*" element={<NotFound />} />
-              <Route path="/guia-de-estilo" element={<GuiaDeEstilo />} />
+              <Route path="*" element={<NotFound />} />       
               <Route path="/submeter" element={<Submeter />} />
-              <Route path="/submeter/conteudo" element={<SubmeterConteudo />} />
               <Route path="/submeter/perfil" element={<SubmeterPerfil />} />
-              <Route path="/categorias" element={<Categorias />} />
-              <Route path="/categoria/:slug" element={<Categoria />} />
+              <Route path="/submeter/conteudo" element={<SubmeterConteudo />} />
             </Routes>
           </div>
           <Footer />

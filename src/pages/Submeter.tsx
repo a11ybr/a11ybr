@@ -19,10 +19,18 @@ export default function Submeter() {
         <h1 className="text-4xl font-bold text-foreground mb-4">
           Enviar contribuição
         </h1>
-        <p className="text-muted-foreground text-lg leading-relaxed">
+        <p className="text-lg leading-relaxed">Compartilhe uma iniciativa de acessibilidade digital com a comunidade. Todas as submissões são revisadas antes de serem publicadas.
+
+        </p>
+        <p className="text-muted-foreground ">
           Escolha o tipo de contribuição que você deseja enviar para o ecossistema a11yBR.
         </p>
       </header>
+      <div className="rounded-lg border border-border bg-muted/50 p-4 mb-8">
+        <p className="text-sm text-muted-foreground">
+          <strong className="text-foreground">Importante:</strong> Esta plataforma documenta e conecta iniciativas — não valida, certifica ou ranqueia. Todas as informações são fornecidas pela comunidade e podem ser editadas ou atualizadas a qualquer momento.
+        </p>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-10">
 
