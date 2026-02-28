@@ -133,14 +133,16 @@ export default function SubmeterPerfil() {
             {links.map((link, index) => (
               <div key={index} className="grid md:grid-cols-[180px_1fr_auto] gap-4 items-end">
                 <select className="input-base" value={link.type} onChange={(e) => handleLinkChange(index, "type", e.target.value)}>
+                  <option value="site">Site/ Portfólio</option>
                   <option value="linkedin">LinkedIn</option>
-                  <option value="site">Site</option>
-                  <option value="portfolio">Portfólio</option>
                   <option value="github">GitHub</option>
                   <option value="instagram">Instagram</option>
-                  <option value="x">X</option>
+                  <option value="x">X/ Twitter</option>
                   <option value="bluesky">Bluesky</option>
                   <option value="mastodon">Mastodon</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="threads">Threads</option>
+                  <option value="tiktok">TikTok</option>
                 </select>
                 <input type="url" placeholder="https://..." className="input-base" value={link.url} onChange={(e) => handleLinkChange(index, "url", e.target.value)} />
                 <button type="button" className="text-sm text-destructive hover:underline" onClick={() => removeLink(index)}>Remover</button>
